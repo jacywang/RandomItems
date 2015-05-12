@@ -24,11 +24,14 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", item);
         }
         
-        Item *item = [[Item alloc] init];
-        item.itemName = @"Red Sofa";
-        item.serialNumber = @"A1B2C";
-        item.valueInDollars = 100;
-        NSLog(@"%@ %@ %@ %d", item.itemName, item.dateCreated, item.serialNumber, item.valueInDollars);
+        Item *item = [[Item alloc] initWithItemName:@"Red Sofa" valueInDollars:100 serialNumber:@"A1B2C"];
+        NSLog(@"%@", item);
+        
+        Item *itemWithName = [[Item alloc] initWithItemName:@"Blue Sofa"];
+        NSLog(@"%@", itemWithName);
+        
+        Item *itemWithNoName = [[Item alloc] init];
+        NSLog(@"%@", itemWithNoName);
         
         // items = nil;
     }

@@ -15,4 +15,9 @@
 @property (nonatomic, assign) int valueInDollars;
 @property (nonatomic, strong) NSDate *dateCreated;
 
+// Designated initializer
+-(instancetype)initWithItemName:(NSString *)itemName valueInDollars:(int)value serialNumber:(NSString *)serialNumber;
+
+-(instancetype)initWithItemName:(NSString *)itemName;
+
 @end

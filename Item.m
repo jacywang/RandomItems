@@ -10,4 +10,31 @@
 
 @implementation Item
 
+-(instancetype)initWithItemName:(NSString *)itemName valueInDollars:(int)value serialNumber:(NSString *)serialNumber {
+    self = [super self];
+    
+    if (self) {
+        _itemName = itemName;
+        _valueInDollars = value;
+        _serialNumber = serialNumber;
+        _dateCreated =[[NSDate alloc] init];
+    }
+    
+    return self;
+}
+
+-(instancetype)initWithItemName:(NSString *)itemName {
+    return [self initWithItemName:itemName valueInDollars:0 serialNumber:@""];
+}
+
+-(instancetype)init {
+    return [self initWithItemName:@"Item"];
+}
+
+-(NSString *)description {
+    NSString *descriptionString = [[NSString alloc] initWithFormat:@"%@ (%@): Worth %d, recorded on %@", self.itemName, self.serialNumber, self.valueInDollars, self.dateCreated];
+    
+    return descriptionString;
+}
+
 @end
