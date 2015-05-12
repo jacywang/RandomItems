@@ -67,4 +67,10 @@
     NSLog(@"Destroyed: %@", self);
 }
 
+-(void)setContainedItem:(Item *)item {
+    _containedItem = item;
+    item.container = self;
+}
+
+
 @end

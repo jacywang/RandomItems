@@ -15,11 +15,16 @@
 @property (nonatomic, assign) int valueInDollars;
 @property (nonatomic, strong) NSDate *dateCreated;
 
+@property (nonatomic, strong) Item *containedItem;
+@property (nonatomic, weak) Item *container;
+
 +(instancetype)randomItem;
 
 // Designated initializer
 -(instancetype)initWithItemName:(NSString *)itemName valueInDollars:(int)value serialNumber:(NSString *)serialNumber;
 
 -(instancetype)initWithItemName:(NSString *)itemName;
+
+-(void)setContainedItem:(Item *)containedItem;
 
 @end
